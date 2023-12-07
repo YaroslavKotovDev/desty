@@ -1,0 +1,136 @@
+.house {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 4.95%, rgba(0, 0, 0, 0.2) 28.56%), linear-gradient(180deg, rgba(0, 0, 0, 0.5) 14.07%, rgba(0, 0, 0, 0.5) 39.07%), linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../assets/house.png") lightgray -135.111px 0px/114.074% 114.074% no-repeat;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.house .header {
+  display: flex;
+  flex-direction: column;
+}
+.house .header .get-access {
+  align-self: flex-end;
+  display: inline-flex;
+  margin-top: 34px;
+  margin-right: 39px;
+  padding: 14px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #E1E1E1;
+  background: color(display-p3 0.8813 0.8813 0.8813);
+  color: #425A71;
+  color: color(display-p3 0.2784 0.349 0.4353);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+.house .header h1 {
+  color: #FFF;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.house .content {
+  display: flex;
+  margin-bottom: 5%;
+  gap: 5%;
+  justify-content: center;
+}
+.house .content .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+.house .content .item .text {
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.house2 {
+  position: relative;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.house2:before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 4.95%, rgba(0, 0, 0, 0) 28.56%), linear-gradient(180deg, rgba(0, 0, 0, 0.5) 14.07%, rgba(0, 0, 0, 0) 39.07%), linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../assets/house.png") lightgray -135.111px 0px/114.074% 114.074% no-repeat;
+  filter: blur(25px);
+  z-index: -1;
+}
+.house2 .header {
+  display: flex;
+  flex-direction: column;
+}
+.house2 .header .get-access {
+  align-self: flex-end;
+  display: inline-flex;
+  margin-top: 34px;
+  margin-right: 39px;
+  padding: 14px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #E1E1E1;
+  background: color(display-p3 0.8813 0.8813 0.8813);
+  color: #425A71;
+  color: color(display-p3 0.2784 0.349 0.4353);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+.house2 .header h1 {
+  color: #FFF;
+  color: color(display-p3 1 1 1);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.house2 .content {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+}
+.house2 .content img {
+  width: 40%;
+}
+
+/*# sourceMappingURL=house.css.map */
