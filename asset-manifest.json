@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.15ee09df.css",
+    "main.js": "/static/js/main.3ca46de8.js",
+    "static/media/norway.jpg": "/static/media/norway.a6d36f16c2519f166b60.jpg",
+    "static/media/scotland.jpg": "/static/media/scotland.e7e4be0d4d617cfa4e59.jpg",
+    "static/media/earth.png": "/static/media/earth.13b118354953bf96c654.png",
+    "static/media/portugal.jpg": "/static/media/portugal.e4a8296b17f70a80c581.jpg",
+    "static/media/house.png": "/static/media/house.5583dc3c4b47989d767b.png",
+    "static/media/background-phone.png": "/static/media/background-phone.e3d94f1c58545508adf0.png",
+    "static/media/background.png": "/static/media/background.e3d94f1c58545508adf0.png",
+    "static/media/benefit1.png": "/static/media/benefit1.3f7a5e69706971034168.png",
+    "static/media/benefit2.png": "/static/media/benefit2.d63340b51d4a6a9df6b5.png",
+    "static/media/indonesia.jpg": "/static/media/indonesia.38f1359b9de79acd4440.jpg",
+    "static/media/spain.jpg": "/static/media/spain.800e61b0259b15347a74.jpg",
+    "static/media/tailand.png": "/static/media/tailand.175709349ca4dbfddd85.png",
+    "static/media/earth-phone.png": "/static/media/earth-phone.67ece2a842d28d9c45ad.png",
+    "static/media/italy.jpg": "/static/media/italy.ecc57496bbe923beb73a.jpg",
+    "static/media/housePlan.png": "/static/media/housePlan.5d57548652c7510bec60.png",
+    "static/media/phone.png": "/static/media/phone.7b9411bb88763a35696e.png",
+    "static/media/peoples.png": "/static/media/peoples.0c49913b78231cedc67d.png",
+    "static/media/culture.png": "/static/media/culture.39348544718d0e17a25a.png",
+    "static/media/travel.png": "/static/media/travel.ea61870df58def0358a0.png",
+    "static/media/activities.png": "/static/media/activities.fd0cab83cec80969ec1f.png",
+    "static/media/meditation.png": "/static/media/meditation.51d7a14d748befb4bb53.png",
+    "static/media/countries.png": "/static/media/countries.7cda2e4901a3d1ed1576.png",
+    "static/media/Jessica.png": "/static/media/Jessica.56f58e1f8b01185f521e.png",
+    "static/media/starlink.png": "/static/media/starlink.2b05dfd126a193fc178f.png",
+    "index.html": "/index.html",
+    "main.15ee09df.css.map": "/static/css/main.15ee09df.css.map",
+    "main.3ca46de8.js.map": "/static/js/main.3ca46de8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15ee09df.css",
+    "static/js/main.3ca46de8.js"
+  ]
+}
