@@ -19,10 +19,8 @@
   align-items: center;
   gap: 10px;
   border-radius: 20px;
-  background: #E1E1E1;
-  background: color(display-p3 0.8813 0.8813 0.8813);
-  color: #425A71;
-  color: color(display-p3 0.2784 0.349 0.4353);
+  background: #000;
+  color: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -34,11 +32,15 @@
 .phone2 .header h1 {
   color: black;
   text-align: center;
-  font-family: "Inter", sans-serif;
-  font-size: 60px;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .phone2 .content {
   height: 80%;
@@ -51,7 +53,7 @@
 }
 .phone2 .content img {
   width: 16%;
-  margin-left: 20%;
+  margin-left: 0;
   justify-self: center;
   height: auto;
   object-fit: cover;
@@ -67,6 +69,7 @@
   gap: 40px;
 }
 .phone2 .content .services .service {
+  opacity: 0;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -115,5 +118,80 @@
     opacity: 1;
   }
 }
+
+@keyframes fadeOutServices {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes moveHeaderNext {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes moveHeaderBack {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes moveServiceNext {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes moveServiceBack {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes movePhoneNext {
+  from {
+    transform: translateX(-50vh);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes movePhoneBack {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(-50vh);
+  }
+}
+
+@keyframes movePhoneBackBack {
+  from {
+    transform: translateX(-50vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
 
 /*# sourceMappingURL=phone2.css.map */

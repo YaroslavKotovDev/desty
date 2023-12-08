@@ -1,0 +1,368 @@
+.lifetime {
+    position: relative;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.lifetime:before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    right: -100px;
+    bottom: -100px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.00) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url("../assets/tailand.png"), lightgray 50% / cover no-repeat;
+    filter: blur(25px);
+    z-index: -1;
+}
+
+.lifetime .header {
+    display: flex;
+    flex-direction: column;
+}
+
+.lifetime .header .get-access {
+    align-self: flex-end;
+    display: inline-flex;
+    margin-top: 34px;
+    margin-right: 39px;
+    padding: 14px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: #E1E1E1;
+    background: color(display-p3 0.8813 0.8813 0.8813);
+    color: #425A71;
+    color: color(display-p3 0.2784 0.349 0.4353);
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.lifetime .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lifetime .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-bold {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica, serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.text-light {
+    font-family: "Roboto-Light", Helvetica, serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.text-regular {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica, serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.text-medium {
+    color: #ffffff;
+    font-family: "Inter-Medium", Helvetica, serif;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.lifetime .image {
+    background-size: 100% 100%;
+    height: 250px;
+    position: relative;
+}
+
+.lifetime .wrapper {
+    border-radius: 40px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.lifetime .grid-view {
+    display: grid;
+}
+
+.lifetime .grid-container {
+    display: grid;
+    grid-template-columns: minmax(430px, 970px) 660px;
+    grid-gap: 94px;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+.lifetime .grid-container-left {
+    display: grid;
+    grid-template-rows: 240px 110px 218px;
+    row-gap: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Content */
+
+.lifetime .container-content {
+    height: 100%;
+}
+
+.lifetime .container-content .title {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.lifetime .container-content .sub-title {
+    margin-top: 12px;
+}
+
+.lifetime .container-content .title-2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Phone */
+
+.lifetime .your-phone-container {
+    height: 109px;
+    position: relative;
+    margin: 24px 0 0 -16px;
+}
+
+.lifetime .your-phone-container .title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 5px;
+    width: max-content;
+    text-align: start;
+}
+
+.lifetime .contact-container {
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px #00000026;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 10px 20px;
+    margin-top: 12px;
+}
+
+.lifetime .contact-me-container {
+    display: flex;
+    min-width: 480px;
+    height: 53px;
+    align-items: center;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 20px;
+    justify-content: space-between;
+}
+
+.lifetime .plus {
+    color: #626262;
+    font-size: 20px;
+    margin-top: -1px;
+    width: fit-content;
+}
+
+.lifetime .contact-me-wrapper {
+    align-items: center;
+    background-color: #d93377;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 22px;
+}
+
+.lifetime .contact-me-text {
+    font-size: 20px;
+    margin: -1px -2.5px 0 -2.5px;
+    width: fit-content;
+}
+
+
+/* Cirles */
+
+.lifetime .circle-container {
+    position: relative;
+    height: 218px;
+    margin-top: 114px;
+}
+
+.lifetime .circle-container .grid-circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lifetime .circle-container .grid-circle-container {
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 260px);
+    column-gap: 110px;
+}
+
+.lifetime .circle-container .item-1 {
+    margin-left: -42px;
+}
+
+.lifetime .circle-container .item-2 {
+    margin-left: -14px;
+}
+
+.lifetime .circle-container .item-3 {
+    margin-left: 4px;
+}
+
+.lifetime .circle-wrapper {
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 59.5px;
+    height: 119px;
+    width: 121px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lifetime .grid-circle-item .title:not(.circle-wrapper .title) {
+    margin-top: 26px;
+}
+
+.lifetime .circle-wrapper .title {
+    -webkit-text-stroke: 2px #ffffff;
+    color: transparent;
+    text-align: center;
+}
+
+
+/* indiegogo */
+
+.lifetime .indiegogo-wrapper {
+    height: 696px;
+    width: 653px;
+    position: relative;
+    border-radius: 50px;
+    background: #FFF;
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 86px;
+    margin-top: 60px;
+}
+
+.lifetime .indiegogo-wrapper img {
+    width: 320px;
+    height: 50px;
+    margin-top: 12px;
+}
+
+
+.lifetime .indiegogo-wrapper .title {
+    color: #d93377;
+    margin-top: 26px;
+}
+
+.lifetime .indiegogo-wrapper .sub-title {
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 54px;
+}
+
+.lifetime .indiegogo-wrapper .learn-more-container {
+    align-items: center;
+    background-color: #d93377;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    height: 53px;
+    justify-content: center;
+    width: 227px;
+    margin-top: 89px;
+}
+
+.lifetime .indiegogo-wrapper .text-button {
+    font-size: 25px;
+    font-weight: 500;
+    margin: -4px 0 -2px 0;
+    text-align: center;
+    width: fit-content;
+}
+
+.lifetime .indiegogo-wrapper .get-unique-offers {
+    margin-top: 30px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+@keyframes fadeInSlideBottom {
+    from {
+        transform: translateY(200vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlideBottomBack {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(200vh);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+

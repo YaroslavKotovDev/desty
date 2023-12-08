@@ -81,4 +81,31 @@
   border-radius: 10px;
 }
 
+@keyframes fadeInSlideLeft {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInSlideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes fadeInSlideRightBack {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
 /*# sourceMappingURL=materials.css.map */

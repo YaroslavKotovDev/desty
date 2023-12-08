@@ -1,7 +1,98 @@
 import "../src/styles/house.css"
-const House = () => {
+import {useEffect, useState} from "react";
+import _ from "lodash";
 
-    return(<div className={"house"}>
+const House = ({onMaxScroll, onMinScroll, setUp, up}) => {
+    const [offsetY, setOffsetY] = useState(0);
+    let animationState = false;
+    let isMax = false;
+    const maxScrollUp = -400;
+    const maxScrollDown = 400;
+
+    const handleWheel = (e) => {
+        if (isMax) {
+            return false;
+        }
+
+        setOffsetY(prevOffsetY => {
+            let newOffsetY = prevOffsetY + e.deltaY;
+
+            let parentElement = document.getElementById('section4');
+            let h1Element = parentElement.querySelector('h1');
+            let items = parentElement.querySelectorAll('.item');
+            let access = parentElement.querySelector('.get-access');
+
+            if (newOffsetY < maxScrollUp && !isMax) {
+                newOffsetY = maxScrollUp;
+
+                h1Element.style.animation = 'fadeTopHouseIcon 1s linear';
+                access.style.animation = 'fadeTopHouseIcon 1s linear';
+
+                items.forEach((el, index) => {
+                    el.style.animation = 'myAnimBack 1s linear';
+                })
+
+                setTimeout(() => {
+                    onMinScroll();
+                }, 1000)
+                isMax = true
+            } else if (newOffsetY > maxScrollDown && !isMax) {
+                newOffsetY = maxScrollDown;
+
+                h1Element.style.animation = 'fadeTopHouseIcon 1s linear';
+                access.style.animation = 'fadeTopHouseIcon 1s linear';
+
+                items.forEach((el, index) => {
+                    el.style.animation = 'myAnimBack 1s linear';
+                })
+
+                setTimeout(() => {
+                    onMaxScroll();
+                }, 1000)
+                isMax = true;
+            }
+
+            return newOffsetY;
+        });
+
+    };
+
+    useEffect(() => {
+        if (up) {
+            setOffsetY(0);
+            setUp(false);
+        }
+
+
+        if (offsetY === 0 && !animationState) {
+            let parentElement = document.getElementById('section4');
+
+            if (parentElement) {
+                let h1Element = parentElement.querySelector('h1');
+                let items = parentElement.querySelectorAll('.item');
+                let access = parentElement.querySelector('.get-access');
+
+                h1Element.style.animation = 'fadeInSlideDown 1.5s linear';
+                access.style.animation = 'fadeInSlideDown 1.5s linear';
+                items.forEach((el, index) => {
+                    el.style.opacity = 0;
+                    setTimeout(() => {
+                        el.style.animation = "myAnim 1s linear  0s 1 normal forwards";
+                        el.style.opacity = 1
+                        setTimeout(() => {
+                            let textElement = el.querySelector('.text');
+                            textElement.style.animation = 'fadeIn 1.5s ease-in-out'
+                            textElement.style.opacity = 1
+                        }, 500)
+
+                    }, index * 200);
+                })
+            }
+            animationState = true;
+        }
+    }, [offsetY]);
+
+    return (<div className={"house"} onWheel={handleWheel}>
         <div className={"header"}>
             <div className="get-access">
                 Get Access
@@ -43,7 +134,7 @@ const House = () => {
                         <g clipPath="url(#clip0_401_31)">
                             <mask
                                 id="mask0_401_31"
-                                style={{ maskType: "luminance" }}
+                                style={{maskType: "luminance"}}
                                 width="155"
                                 height="154"
                                 x="0"
@@ -59,8 +150,10 @@ const House = () => {
                                 strokeWidth="4"
                                 mask="url(#mask0_401_31)"
                             >
-                                <path d="M20.63 103V51.667h19.25L71.963 26v102.667L39.88 103H20.63zM84.046 57.75S96.88 60.958 96.88 77 84.046 96.25 84.046 96.25M96.88 44.916S116.13 50.264 116.13 77c0 26.736-19.25 32.083-19.25 32.083"></path>
-                                <path d="M109.713 32.083S135.38 39.57 135.38 77c0 37.43-25.667 44.917-25.667 44.917"></path>
+                                <path
+                                    d="M20.63 103V51.667h19.25L71.963 26v102.667L39.88 103H20.63zM84.046 57.75S96.88 60.958 96.88 77 84.046 96.25 84.046 96.25M96.88 44.916S116.13 50.264 116.13 77c0 26.736-19.25 32.083-19.25 32.083"></path>
+                                <path
+                                    d="M109.713 32.083S135.38 39.57 135.38 77c0 37.43-25.667 44.917-25.667 44.917"></path>
                             </g>
                         </g>
                         <defs>
@@ -80,28 +173,13 @@ const House = () => {
             </div>
             <div className="item">
                 <div className="image">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="155"
-                        height="154"
-                        fill="none"
-                        viewBox="0 0 155 154"
-                    >
-                        <g clipPath="url(#clip0_401_42)">
-                            <path
-                                fill="#fff"
-                                d="M54.175 135.369l-.182 15.105s-7.215 4.79-23.32 4.555C14.576 154.784.326 149.034.5 136.548c.183-12.476 26.651-26.151 53.302-31.896v17.505l-28.319 9.59s-4.845 7.937 1.668 8.161c14.819.553 27.024-4.539 27.024-4.539zm41.271-41.502s4.07 8.646 14.807 7.2c3.839-.521 14.798-18.24 7.766-45.576-7.024-27.335-58.11-38.37-58.11-38.37V158.17l23.502 12.95.37-127.625 11.661 6.236.004 44.136zm23.876 15.831s-15.533.98-29.613 8.875c-.13.083 0 14.881 0 14.881l35.72-10.791 12.591 7.196L89.534 151.7v16.54s55.335-23.031 63.479-31.896c8.128-8.896-19.071-30.956-33.691-26.646z"
-                            ></path>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_401_42">
-                                <path
-                                    fill="#fff"
-                                    d="M0 0H154V154H0z"
-                                    transform="translate(.5)"
-                                ></path>
-                            </clipPath>
-                        </defs>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="154" height="120" viewBox="0 0 154 120" fill="none">
+                        <path
+                            d="M53.678 92.0835L53.4954 103.831C53.4954 103.831 46.2806 107.556 30.1749 107.374C14.0773 107.183 -0.173879 102.711 0.000609141 93.0006C0.183213 83.2982 26.6527 72.6626 53.3047 68.1948V81.809L24.9849 89.2673C24.9849 89.2673 20.1398 95.4394 26.6527 95.6138C41.472 96.044 53.678 92.0835 53.678 92.0835ZM94.9506 59.8072C94.9506 59.8072 99.0206 66.5311 109.758 65.4071C113.596 65.0013 124.557 51.2208 117.524 29.9617C110.5 8.7025 59.4118 0.120117 59.4118 0.120117V109.816L82.915 119.888L83.2842 20.6326L94.9465 25.4818L94.9506 59.8072ZM118.827 72.1188C118.827 72.1188 103.294 72.8817 89.2128 79.0212C89.0829 79.0862 89.2128 90.5943 89.2128 90.5943L124.934 82.2026L137.526 87.7984L89.0383 104.785V117.648C89.0383 117.648 144.375 99.7366 152.519 92.8423C160.647 85.9237 133.448 68.767 118.827 72.1188Z"
+                            fill="white" style={{
+                            fill: 'white',
+                            fillOpacity: 1,
+                        }}/>
                     </svg>
                 </div>
                 <div className="text">

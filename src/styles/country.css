@@ -79,6 +79,25 @@
     transform: translateY(0);
   }
 }
+
+@keyframes myAnimBack {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes fadeTopCountries {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vw);
+  }
+}
+
 .country .content .image-container img {
   width: 100%;
   object-fit: cover;

@@ -46,7 +46,7 @@
 .house .content {
   display: flex;
   margin-bottom: 5%;
-  gap: 5%;
+  gap: 15%;
   justify-content: center;
 }
 .house .content .item {
@@ -113,6 +113,7 @@
   cursor: pointer;
 }
 .house2 .header h1 {
+  opacity: 0;
   color: #FFF;
   color: color(display-p3 1 1 1);
   text-align: center;
@@ -132,5 +133,53 @@
 .house2 .content img {
   width: 40%;
 }
+
+@keyframes fadeInBlurHouse {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeInHouseIcons {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutHouse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeLeftHouseIcon {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes fadeTopHouseIcon {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vw);
+  }
+}
+
 
 /*# sourceMappingURL=house.css.map */

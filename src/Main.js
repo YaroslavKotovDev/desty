@@ -1,16 +1,76 @@
 import "../src/styles/main.css";
 import earth from "../src/assets/earth.png";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
+import _ from "lodash";
 
-const Main = () => {
-    
+const Main = ({onMaxScroll, up, setUp}) => {
+    const [offsetY, setOffsetY] = useState(0);
+    const [startY, setStartY] = useState(0);
+    const [isMax, setMax] = useState(false);
+    const maxScrollUp = 0;
+    const maxScrollDown = 600;
+
+    const handleWheel = (e) => {
+        if (isMax) {
+            return false;
+        }
+
+
+        setOffsetY(prevOffsetY => {
+            let newOffsetY = null;
+            if (e?.touches && e.touches.length) {
+                const touch = e.touches[0];
+                const deltaY = touch.clientY - startY;
+
+                setStartY(touch.clientY);
+                newOffsetY = prevOffsetY + deltaY;
+            } else {
+                newOffsetY =  prevOffsetY + e.deltaY;
+            }
+
+            if (newOffsetY < maxScrollUp) {
+                newOffsetY = maxScrollUp;
+            } else if (newOffsetY > maxScrollDown) {
+                newOffsetY = maxScrollDown;
+                onMaxScroll();
+                setMax(true);
+            }
+
+            return newOffsetY;
+        });
+    };
+
+    useEffect(() => {
+        if (up) {
+            setOffsetY(0);
+            setUp(false);
+        }
+
+        const moveUpElements = document.querySelectorAll('.move-to-top');
+        const moveDown = document.getElementById('move-to-bottom');
+
+        moveUpElements.forEach(el => {
+            el.style.transition = 'transform 1s ease-out';
+            el.style.transform = `translateY(${-offsetY * 0.5}px)`;
+        });
+        moveDown.style.transition = 'transform 1s ease-out';
+        moveDown.style.transform = `translateY(${offsetY}px)`;
+
+    }, [offsetY]);
+
+    function handleTouchStart(event) {
+        // Запоминаем начальную позицию Y при первом касании
+        const touch = event.touches[0];
+        setStartY(touch.clientY);
+    }
+
     return (
-        <div className="main-content" >
-            <div  className="get-access">
+        <div className="main-content" onWheel={handleWheel} onTouchStart={handleTouchStart} onTouchMove={handleWheel} >
+            <div className="get-access move-to-top">
                 Get Access
             </div>
-            <h1 id={"move-to-top"}>EXPLORE BEYOND BORDERS</h1>
-            <img  id={"move-to-bottom"} src={earth} />
+            <h1 id="move-to-top" className="move-to-top">EXPLORE BEYOND BORDERS</h1>
+            <div id={"move-to-bottom"} className="move-to-bottom image"> </div>
             <div className="scroll-icon">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

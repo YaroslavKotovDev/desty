@@ -16,10 +16,8 @@
   align-items: center;
   gap: 10px;
   border-radius: 20px;
-  background: #E1E1E1;
-  background: color(display-p3 0.8813 0.8813 0.8813);
-  color: #425A71;
-  color: color(display-p3 0.2784 0.349 0.4353);
+  background: #000;
+  color: white;
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -36,7 +34,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 0;
 }
+
 .phone1 .content {
   height: 80vh;
   display: flex;
@@ -58,6 +58,25 @@
     transform: translateY(0);
   }
 }
+
+@keyframes fadeOutSlideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes fadeOutHeader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeInSlideUp {
   0% {
     transform: rotateY(30deg) translateY(300px) skewY(-30deg);
@@ -74,6 +93,15 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes fadeOutSlideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
   }
 }
 
