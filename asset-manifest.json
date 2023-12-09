@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/desty/static/css/main.3fa2ed40.css",
-    "main.js": "/desty/static/js/main.c7cfc58f.js",
+    "main.css": "/desty/static/css/main.925fea31.css",
+    "main.js": "/desty/static/js/main.431c4d3a.js",
     "static/media/norway.jpg": "/desty/static/media/norway.a6d36f16c2519f166b60.jpg",
     "static/media/scotland.jpg": "/desty/static/media/scotland.e7e4be0d4d617cfa4e59.jpg",
     "static/media/earth.png": "/desty/static/media/earth.13b118354953bf96c654.png",
@@ -27,11 +27,11 @@
     "static/media/Jessica.png": "/desty/static/media/Jessica.56f58e1f8b01185f521e.png",
     "static/media/starlink.png": "/desty/static/media/starlink.2b05dfd126a193fc178f.png",
     "index.html": "/desty/index.html",
-    "main.3fa2ed40.css.map": "/desty/static/css/main.3fa2ed40.css.map",
-    "main.c7cfc58f.js.map": "/desty/static/js/main.c7cfc58f.js.map"
+    "main.925fea31.css.map": "/desty/static/css/main.925fea31.css.map",
+    "main.431c4d3a.js.map": "/desty/static/js/main.431c4d3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fa2ed40.css",
-    "static/js/main.c7cfc58f.js"
+    "static/css/main.925fea31.css",
+    "static/js/main.431c4d3a.js"
   ]
 }
